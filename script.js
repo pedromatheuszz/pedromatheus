@@ -1,13 +1,14 @@
-// Atualize estes dados com seus links e contatos reais.
 const portfolioData = {
   name: "Pedro Matheus",
   role: "Desenvolvedor Full Stack",
-  availability: "Disponível para novos projetos em 2026",
-  email: "contato@pedromatheus.dev",
-  github: "https://github.com/pedromatheus",
-  githubLabel: "github.com/pedromatheus",
-  linkedin: "https://linkedin.com/in/pedromatheus",
-  linkedinLabel: "linkedin.com/in/pedromatheus",
+  availability: "Disponivel para novos projetos em 2026",
+  email: "pedromatheus.developer@gmail.com",
+  whatsappDisplay: "+55 (47) 9 9648-2391",
+  whatsappNumber: "5547996482391",
+  site: "https://pedromatheus-dev.vercel.app",
+  siteLabel: "pedromatheus-dev.vercel.app",
+  // Quando a foto estiver no projeto, defina o caminho aqui, por exemplo: "instagram-profile.jpg"
+  profileImage: "",
 };
 
 const syncText = (selector, value) => {
@@ -16,48 +17,126 @@ const syncText = (selector, value) => {
   });
 };
 
+const buildGmailUrl = ({ subject = "", body = "" } = {}) => {
+  const params = new URLSearchParams({
+    view: "cm",
+    fs: "1",
+    to: portfolioData.email,
+  });
+
+  if (subject) {
+    params.set("su", subject);
+  }
+
+  if (body) {
+    params.set("body", body);
+  }
+
+  return `https://mail.google.com/mail/?${params.toString()}`;
+};
+
+const buildWhatsAppUrl = (message = "") => {
+  const baseUrl = `https://wa.me/${portfolioData.whatsappNumber}`;
+  return message ? `${baseUrl}?text=${encodeURIComponent(message)}` : baseUrl;
+};
+
 syncText("[data-name]", portfolioData.name);
 syncText("[data-role]", portfolioData.role);
 syncText("[data-availability]", portfolioData.availability);
 syncText("[data-email]", portfolioData.email);
-syncText("[data-github-label]", portfolioData.githubLabel);
-syncText("[data-linkedin-label]", portfolioData.linkedinLabel);
+syncText("[data-whatsapp-display]", portfolioData.whatsappDisplay);
+syncText("[data-site-label]", portfolioData.siteLabel);
 
-const emailLink = document.querySelector("[data-email-link]");
-const githubLink = document.querySelector("[data-github-link]");
-const linkedinLink = document.querySelector("[data-linkedin-link]");
+document.querySelectorAll("[data-gmail-link]").forEach((link) => {
+  link.href = buildGmailUrl();
+});
 
-if (emailLink) {
-  emailLink.href = `mailto:${portfolioData.email}`;
+document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
+  link.href = buildWhatsAppUrl("Ola, Pedro. Vim pelo seu site e quero conversar sobre um projeto.");
+});
+
+document.querySelectorAll("[data-site-link]").forEach((link) => {
+  link.href = portfolioData.site;
+});
+
+const profileImage = document.querySelector("[data-profile-image]");
+const avatarFallback = document.querySelector("[data-avatar-fallback]");
+
+if (profileImage && avatarFallback && portfolioData.profileImage) {
+  profileImage.src = portfolioData.profileImage;
+  profileImage.hidden = false;
+
+  profileImage.addEventListener("load", () => {
+    avatarFallback.hidden = true;
+  });
+
+  profileImage.addEventListener("error", () => {
+    profileImage.hidden = true;
+    avatarFallback.hidden = false;
+  });
 }
 
-if (githubLink) {
-  githubLink.href = portfolioData.github;
-}
-
-if (linkedinLink) {
-  linkedinLink.href = portfolioData.linkedin;
-}
-
-const currentYear = document.getElementById("current-year");
-
-if (currentYear) {
-  currentYear.textContent = new Date().getFullYear();
-}
-
+const themeButtons = document.querySelectorAll("[data-set-theme]");
+const root = document.documentElement;
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+const headerPanel = document.getElementById("header-panel");
 const menuToggle = document.querySelector(".menu-toggle");
-const siteNav = document.querySelector(".site-nav");
+const themeColors = {
+  dark: "#050706",
+  light: "#f8fff9",
+};
 
-if (menuToggle && siteNav) {
+const setTheme = (theme) => {
+  const selectedTheme = theme === "light" ? "light" : "dark";
+  root.dataset.theme = selectedTheme;
+
+  themeButtons.forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.setTheme === selectedTheme);
+    button.setAttribute(
+      "aria-pressed",
+      String(button.dataset.setTheme === selectedTheme)
+    );
+  });
+
+  if (themeMeta) {
+    themeMeta.setAttribute("content", themeColors[selectedTheme]);
+  }
+
+  try {
+    window.localStorage.setItem("portfolio-theme", selectedTheme);
+  } catch (error) {
+    // Ignore storage failures and keep the selected theme in memory only.
+  }
+};
+
+let savedTheme = "dark";
+
+try {
+  savedTheme = window.localStorage.getItem("portfolio-theme") || "dark";
+} catch (error) {
+  savedTheme = "dark";
+}
+
+setTheme(savedTheme);
+
+themeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setTheme(button.dataset.setTheme);
+  });
+});
+
+if (menuToggle && headerPanel) {
   menuToggle.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("is-open");
+    const isOpen = headerPanel.classList.toggle("is-open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
-  siteNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      siteNav.classList.remove("is-open");
-      menuToggle.setAttribute("aria-expanded", "false");
+  headerPanel.querySelectorAll("a, button[data-set-theme]").forEach((element) => {
+    element.addEventListener("click", () => {
+      if (window.innerWidth <= 760) {
+        headerPanel.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
     });
   });
 }
@@ -75,12 +154,13 @@ if ("IntersectionObserver" in window) {
       });
     },
     {
-      threshold: 0.18,
-    },
+      threshold: 0.16,
+      rootMargin: "0px 0px -40px 0px",
+    }
   );
 
   revealItems.forEach((item, index) => {
-    item.style.transitionDelay = `${Math.min(index * 60, 280)}ms`;
+    item.style.transitionDelay = `${Math.min(index * 55, 220)}ms`;
     observer.observe(item);
   });
 } else {
@@ -101,17 +181,18 @@ if (contactForm && formFeedback) {
     const subject = `Novo projeto para ${portfolioData.name}`;
     const bodyLines = [
       `Nome: ${name}`,
-      company ? `Empresa ou marca: ${company}` : "",
+      company ? `Empresa ou projeto: ${company}` : "",
       "",
-      "Objetivo do projeto:",
+      "Detalhes do projeto:",
       message,
     ].filter(Boolean);
 
-    const mailtoUrl =
-      `mailto:${portfolioData.email}?subject=${encodeURIComponent(subject)}` +
-      `&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+    const gmailUrl = buildGmailUrl({
+      subject,
+      body: bodyLines.join("\n"),
+    });
 
-    formFeedback.textContent = "Abrindo seu aplicativo de e-mail com a mensagem pronta...";
-    window.location.href = mailtoUrl;
+    formFeedback.textContent = "Abrindo o Gmail com a mensagem preenchida...";
+    window.open(gmailUrl, "_blank", "noopener,noreferrer");
   });
 }
