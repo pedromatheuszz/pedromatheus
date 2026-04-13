@@ -219,6 +219,7 @@ html[data-theme="light"] .avatar-fallback {
   display: flex;
   align-items: center;
   gap: 1rem;
+  min-width: 0;
 }
 
 .site-nav,
@@ -226,11 +227,13 @@ html[data-theme="light"] .avatar-fallback {
   display: flex;
   align-items: center;
   gap: 1rem;
+  min-width: 0;
 }
 
 .site-nav a {
   color: var(--muted);
   font-weight: 600;
+  white-space: nowrap;
   transition: color 180ms ease;
 }
 
@@ -359,6 +362,7 @@ html[data-theme="light"] .avatar-fallback {
 .hero h1 {
   max-width: 12ch;
   font-size: clamp(3.25rem, 8vw, 6rem);
+  text-wrap: balance;
 }
 
 .hero h1 span {
@@ -448,6 +452,11 @@ html[data-theme="light"] .avatar-fallback {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.9rem;
   margin-top: 2rem;
+}
+
+.quick-link,
+.contact-link {
+  min-width: 0;
 }
 
 .glass-card,
@@ -782,11 +791,36 @@ textarea:focus-visible {
   }
 
   .service-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .trust-tags {
     justify-content: flex-start;
+  }
+
+  .header-row {
+    min-height: 80px;
+  }
+
+  .header-panel {
+    gap: 0.7rem;
+  }
+
+  .site-nav,
+  .header-tools {
+    gap: 0.7rem;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    max-width: 14ch;
+  }
+
+  .quick-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -795,6 +829,14 @@ textarea:focus-visible {
   .quick-links,
   .hero-metrics {
     grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-row {
+    padding-block: 0.85rem;
   }
 }
 
@@ -805,6 +847,14 @@ textarea:focus-visible {
 
   .hero {
     padding-top: 4.25rem;
+  }
+
+  .hero-grid {
+    gap: 1rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
   }
 
   .menu-toggle {
@@ -863,11 +913,23 @@ textarea:focus-visible {
 
   .hero h1 {
     max-width: 100%;
+    font-size: clamp(2.7rem, 14vw, 4.2rem);
   }
 
   .button,
   .button-full {
     width: 100%;
+  }
+
+  .quick-link,
+  .contact-link,
+  .contact-card,
+  .service-card,
+  .info-card,
+  .stack-panel,
+  .glass-card {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .footer-row {
