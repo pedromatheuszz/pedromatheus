@@ -7,8 +7,7 @@ const portfolioData = {
   whatsappNumber: "5547996482391",
   site: "https://pedromatheus-dev.vercel.app",
   siteLabel: "pedromatheus-dev.vercel.app",
-  // Quando a foto estiver no projeto, defina o caminho aqui, por exemplo: "instagram-profile.jpg"
-  profileImage: "",
+  profileImage: "assets/icon_perfil.jpg",
 };
 
 const syncText = (selector, value) => {
