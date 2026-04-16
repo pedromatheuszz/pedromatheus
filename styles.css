@@ -242,6 +242,11 @@ html[data-theme="light"] .avatar-fallback {
   color: var(--text);
 }
 
+.site-nav a.is-current,
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+}
+
 .header-tools {
   gap: 0.85rem;
 }
@@ -320,6 +325,10 @@ html[data-theme="light"] .avatar-fallback {
   padding-top: 5.5rem;
 }
 
+.page-hero {
+  padding-top: 4.75rem;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.16fr) minmax(320px, 0.84fr);
@@ -365,6 +374,22 @@ html[data-theme="light"] .avatar-fallback {
   text-wrap: balance;
 }
 
+.page-title,
+.story-card h2,
+.budget-note h3,
+.price-card h3,
+.page-side-card h3 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.page-title {
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+}
+
 .hero h1 span {
   color: var(--primary);
 }
@@ -400,6 +425,13 @@ html[data-theme="light"] .avatar-fallback {
   max-width: 58ch;
   margin: 1.35rem 0 0;
   font-size: 1.04rem;
+}
+
+.page-text {
+  max-width: 58ch;
+  margin-top: 1.2rem;
+  color: var(--muted);
+  line-height: 1.8;
 }
 
 .hero-actions,
@@ -544,6 +576,204 @@ html[data-theme="light"] .avatar-fallback {
 .hero-card,
 .terminal-card {
   padding: 1.45rem;
+}
+
+.page-grid,
+.intro-grid,
+.process-grid,
+.budget-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.page-grid,
+.intro-grid {
+  grid-template-columns: minmax(0, 1.06fr) minmax(280px, 0.94fr);
+  align-items: start;
+}
+
+.story-card {
+  padding: 1.5rem;
+}
+
+.story-card h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  margin-bottom: 1rem;
+}
+
+.story-card p,
+.page-side-card p,
+.budget-note p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.story-card p + p,
+.page-side-card p + p,
+.budget-note p + p {
+  margin-top: 0.9rem;
+}
+
+.page-side-card {
+  padding: 1.4rem;
+  border-radius: var(--radius-lg);
+}
+
+.capability-grid,
+.pricing-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.process-grid,
+.budget-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.process-step,
+.price-card,
+.budget-note {
+  padding: 1.45rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.process-step {
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.process-step:hover,
+.price-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+}
+
+.process-step span {
+  display: inline-grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #041006;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+}
+
+.process-step h3,
+.price-card h3,
+.budget-note h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+}
+
+.process-step p,
+.price-card p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.pricing-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 1.2rem;
+}
+
+.price-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.price-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.price-table th,
+.price-table td {
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.price-table th {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.price-table td {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.price-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.budget-note {
+  margin-top: 1rem;
+}
+
+.cta-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.cta-band h2 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 0.98;
+}
+
+.cta-band p {
+  margin-top: 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.cta-band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.contact-layout-compact .contact-card--compact {
+  min-height: 100%;
+}
+
+.contact-card--compact .form-actions {
+  margin-top: 1.4rem;
 }
 
 .hero-card h2 {
@@ -785,12 +1015,24 @@ textarea:focus-visible {
 
 @media (max-width: 1080px) {
   .hero-grid,
+  .page-grid,
+  .intro-grid,
   .contact-layout,
-  .trust-bar {
+  .trust-bar,
+  .cta-band {
     grid-template-columns: 1fr;
   }
 
   .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid,
+  .budget-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -826,6 +1068,7 @@ textarea:focus-visible {
 
 @media (max-width: 860px) {
   .about-grid,
+  .capability-grid,
   .quick-links,
   .hero-metrics {
     grid-template-columns: 1fr;
@@ -855,6 +1098,12 @@ textarea:focus-visible {
 
   .hero-text {
     font-size: 1rem;
+  }
+
+  .page-title,
+  .story-card h2,
+  .cta-band h2 {
+    font-size: clamp(2.2rem, 12vw, 3.6rem);
   }
 
   .menu-toggle {
@@ -914,6 +1163,11 @@ textarea:focus-visible {
   .hero h1 {
     max-width: 100%;
     font-size: clamp(2.7rem, 14vw, 4.2rem);
+  }
+
+  .process-grid,
+  .budget-grid {
+    grid-template-columns: 1fr;
   }
 
   .button,

@@ -1,21 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio profissional de Pedro Matheus, desenvolvedor focado em websites, interfaces e produtos digitais."
+      content="Conheca Pedro Matheus, desenvolvedor focado em sites, landing pages e experiencias digitais sob medida."
     />
     <meta name="theme-color" content="#050706" />
-    <meta property="og:title" content="Pedro Matheus | Desenvolvedor Full Stack" />
+    <meta
+      property="og:title"
+      content="Pedro Matheus | Desenvolvedor Full Stack"
+    />
     <meta
       property="og:description"
-      content="Desenvolvimento de sites, landing pages e produtos digitais com visual forte, performance e clareza."
+      content="Apresentacao profissional, servicos digitais e contato direto com Pedro Matheus."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pedromatheus-dev.vercel.app" />
-    <title>Pedro Matheus | Desenvolvedor Full Stack</title>
+    <title>Pedro Matheus | Inicio</title>
     <link rel="canonical" href="https://pedromatheus-dev.vercel.app" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +29,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-page="home">
     <div class="page-shell">
       <div class="ambient ambient-one"></div>
       <div class="ambient ambient-two"></div>
@@ -34,7 +37,7 @@
 
       <header class="site-header">
         <div class="container header-row">
-          <a class="brand" href="#inicio" aria-label="Ir para o inicio">
+          <a class="brand" href="index.html" aria-label="Ir para a pagina inicial">
             <span class="avatar-shell">
               <img
                 class="brand-avatar"
@@ -64,64 +67,70 @@
 
           <div class="header-panel" id="header-panel">
             <nav class="site-nav" aria-label="Principal">
-              <a href="#sobre">Sobre</a>
-              <a href="#servicos">Servicos</a>
-              <a href="#stack">Stack</a>
+              <a href="index.html" data-nav-page="home">Inicio</a>
+              <a href="servicos.html" data-nav-page="servicos">Servicos</a>
+              <a href="portfolio.html" data-nav-page="portfolio">Portfolio</a>
               <a href="#contato">Contato</a>
             </nav>
 
             <div class="header-tools">
               <div class="theme-switch" role="group" aria-label="Escolha do tema">
-                <button class="theme-option" type="button" data-set-theme="dark">Escuro</button>
-                <button class="theme-option" type="button" data-set-theme="light">Claro</button>
+                <button
+                  class="theme-option"
+                  type="button"
+                  data-set-theme="dark"
+                >
+                  Escuro
+                </button>
+                <button
+                  class="theme-option"
+                  type="button"
+                  data-set-theme="light"
+                >
+                  Claro
+                </button>
               </div>
 
-              <a class="header-cta" data-site-link href="https://pedromatheus-dev.vercel.app">
-                Abrir site
+              <a class="header-cta" href="portfolio.html#orcamento">
+                Pedir orcamento
               </a>
             </div>
           </div>
         </div>
       </header>
 
-      <main id="inicio">
-        <section class="section hero">
+      <main>
+        <section class="section page-hero home-hero">
           <div class="container hero-grid">
             <div class="hero-copy reveal">
-              <p class="eyebrow">Programacao com estrategia, design e presenca digital</p>
+              <p class="eyebrow">Apresentacao</p>
               <h1>
-                Eu crio websites e experiencias digitais
-                <span>claras, elegantes e prontas para crescer.</span>
+                Sou Pedro Matheus, desenvolvedor focado em criar
+                <span>sites, interfaces e experiencias digitais sob medida.</span>
               </h1>
               <p class="hero-text">
-                Sou <span data-name>Pedro Matheus</span>, programador focado em construir paginas
-                profissionais, landing pages estrategicas e sistemas sob medida com performance,
-                identidade e codigo limpo.
+                Trabalho transformando ideias em paginas profissionais, landing
+                pages estrategicas e sistemas web com visual forte, codigo limpo
+                e foco em clareza para quem acessa.
               </p>
 
               <div class="hero-actions">
-                <a
-                  class="button button-primary"
-                  data-whatsapp-link
-                  href="https://wa.me/5547996482391"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Falar no WhatsApp
+                <a class="button button-primary" href="servicos.html">
+                  Ver servicos
                 </a>
-                <a
-                  class="button button-secondary"
-                  data-gmail-link
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=pedromatheus.developer@gmail.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Enviar pelo Gmail
+                <a class="button button-secondary" href="portfolio.html">
+                  Ver portfolio
                 </a>
               </div>
 
               <div class="quick-links">
-                <a class="quick-link" data-gmail-link href="#">
+                <a
+                  class="quick-link"
+                  data-gmail-link
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <span>Gmail</span>
                   <strong data-email>pedromatheus.developer@gmail.com</strong>
                 </a>
@@ -135,7 +144,13 @@
                   <span>WhatsApp</span>
                   <strong data-whatsapp-display>+55 (47) 9 9648-2391</strong>
                 </a>
-                <a class="quick-link" data-site-link href="#" target="_blank" rel="noreferrer">
+                <a
+                  class="quick-link"
+                  data-site-link
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <span>Link direto</span>
                   <strong data-site-label>pedromatheus-dev.vercel.app</strong>
                 </a>
@@ -144,21 +159,21 @@
 
             <div class="hero-panel reveal">
               <article class="glass-card hero-card">
-                <div class="card-label">Disponibilidade</div>
-                <h2 data-availability>Disponivel para novos projetos</h2>
+                <div class="card-label">Quem eu sou</div>
+                <h2>Desenvolvedor com foco em presenca digital e experiencia de uso.</h2>
                 <p>
-                  Atuacao em websites, produtos digitais, areas logadas, integracoes e paginas de
-                  alta conversao.
+                  Gosto de construir interfaces que transmitam confianca, facilitem
+                  a leitura e valorizem o negocio desde o primeiro contato.
                 </p>
 
                 <div class="hero-metrics">
                   <div>
-                    <strong>Tema</strong>
-                    <span>Escuro por padrao, claro sob demanda</span>
+                    <strong>Atuacao</strong>
+                    <span>Sites profissionais, landing pages e interfaces web.</span>
                   </div>
                   <div>
-                    <strong>Contato</strong>
-                    <span>Gmail, WhatsApp e link publico do portfolio</span>
+                    <strong>Abordagem</strong>
+                    <span>Design intencional, estrutura clara e codigo organizado.</span>
                   </div>
                 </div>
               </article>
@@ -169,130 +184,88 @@
                   <span></span>
                   <span></span>
                 </div>
-                <pre><code>const projeto = {
-  experiencia: "premium",
-  interface: "sob medida",
-  performance: "otimizada",
-  codigo: "escalavel"
+                <pre><code>const pedro = {
+  foco: "experiencias digitais",
+  entrega: "sites e interfaces",
+  objetivo: "clareza + presenca",
+  perfil: "desenvolvedor full stack"
 };</code></pre>
               </article>
             </div>
           </div>
         </section>
 
-        <section class="section" id="sobre">
-          <div class="container section-grid">
-            <div class="section-heading reveal">
-              <p class="eyebrow">Sobre</p>
-              <h2>Programacao voltada para presenca digital, clareza e experiencia real de uso.</h2>
-            </div>
+        <section class="section">
+          <div class="container intro-grid">
+            <article class="glass-card story-card reveal">
+              <p class="eyebrow">Quem eu sou</p>
+              <h2>Eu ajudo marcas, profissionais e projetos a parecerem mais fortes no digital.</h2>
+              <p>
+                Meu trabalho e unir programacao, estrutura visual e boa comunicacao para
+                entregar paginas que sejam bonitas, faceis de navegar e preparadas para gerar
+                contato real.
+              </p>
+              <p>
+                Se voce precisa de uma presenca mais profissional, de uma landing page de campanha
+                ou de uma interface sob medida, eu consigo construir isso com voce de forma clara
+                e objetiva.
+              </p>
+            </article>
 
-            <div class="about-grid">
+            <div class="capability-grid">
               <article class="info-card reveal">
-                <h3>Visual com assinatura</h3>
+                <h3>O que eu faco</h3>
                 <p>
-                  Evito sites com cara generica. O objetivo e construir uma interface que pareca
-                  intencional, confiavel e preparada para destacar o seu trabalho.
+                  Desenvolvo sites, paginas de captacao, interfaces para produtos digitais e
+                  estruturas web pensadas para apresentar e converter melhor.
                 </p>
               </article>
 
               <article class="info-card reveal">
-                <h3>Codigo organizado</h3>
+                <h3>Como eu trabalho</h3>
                 <p>
-                  Estruturo o projeto para ser leve, facil de manter e pronto para futuras
-                  expansoes, sem complicacao desnecessaria.
+                  Organizo o projeto por etapas, alinhei mensagem e visual com o objetivo do
+                  negocio e entrego tudo responsivo para desktop, notebook e celular.
                 </p>
               </article>
 
               <article class="info-card reveal">
-                <h3>Contato direto</h3>
+                <h3>Para onde ir agora</h3>
                 <p>
-                  O site agora conversa melhor com a sua rotina: Gmail para propostas, WhatsApp para
-                  resposta rapida e link publico para compartilhar.
-                </p>
-              </article>
-
-              <article class="info-card reveal">
-                <h3>Experiencia adaptavel</h3>
-                <p>
-                  O usuario pode alternar entre o tema escuro em preto e verde e o tema claro em
-                  branco e verde sem perder consistencia visual.
+                  Na pagina de servicos voce encontra o restante das informacoes do site, e na
+                  pagina de portfolio voce ve valores iniciais e como o orcamento funciona.
                 </p>
               </article>
             </div>
           </div>
         </section>
 
-        <section class="section section-soft" id="servicos">
-          <div class="container">
-            <div class="section-heading centered reveal">
-              <p class="eyebrow">Servicos</p>
-              <h2>Solucoes digitais criadas para apresentar, converter e posicionar melhor.</h2>
+        <section class="section section-soft">
+          <div class="container cta-band reveal">
+            <div>
+              <p class="eyebrow">Proximo passo</p>
+              <h2>Quer ver servicos, processo e valores de partida?</h2>
+              <p>
+                O site agora esta organizado por paginas para facilitar a navegacao e deixar cada
+                assunto mais claro para o cliente.
+              </p>
             </div>
 
-            <div class="service-grid">
-              <article class="service-card reveal">
-                <div class="card-label">01</div>
-                <h3>Sites profissionais</h3>
-                <p>
-                  Paginas para portfolio, marca pessoal ou negocio com narrativa visual, estrutura
-                  clara e comunicacao direta.
-                </p>
-              </article>
-
-              <article class="service-card reveal">
-                <div class="card-label">02</div>
-                <h3>Landing pages</h3>
-                <p>
-                  Paginas orientadas a campanha, oferta e captacao com foco em leitura rapida e
-                  chamada para acao forte.
-                </p>
-              </article>
-
-              <article class="service-card reveal">
-                <div class="card-label">03</div>
-                <h3>Interfaces sob medida</h3>
-                <p>
-                  Dashboards, paineis e experiencias web que precisam unir usabilidade, estrutura e
-                  identidade visual.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="section" id="stack">
-          <div class="container stack-layout">
-            <div class="section-heading reveal">
-              <p class="eyebrow">Stack</p>
-              <h2>Tecnologias e frentes que uso para tirar projetos do rascunho e levar ao ar.</h2>
-            </div>
-
-            <div class="stack-panel reveal">
-              <div class="stack-chips">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-                <span>TypeScript</span>
-                <span>React</span>
-                <span>Next.js</span>
-                <span>Node.js</span>
-                <span>APIs</span>
-                <span>UI Systems</span>
-                <span>Responsive Design</span>
-              </div>
+            <div class="cta-band__actions">
+              <a class="button button-primary" href="servicos.html">Abrir servicos</a>
+              <a class="button button-secondary" href="portfolio.html">Abrir portfolio</a>
             </div>
           </div>
         </section>
 
         <section class="section" id="contato">
-          <div class="container contact-layout">
+          <div class="container contact-layout contact-layout-compact">
             <div class="contact-copy reveal">
               <p class="eyebrow">Contato</p>
               <h2>Escolha a forma mais rapida de falar comigo.</h2>
               <p>
-                O site agora esta preparado com Gmail, WhatsApp e link publico para facilitar
-                compartilhamento e entrada de novos projetos.
+                Se fizer sentido para o seu projeto, voce pode seguir por Gmail, WhatsApp ou abrir
+                diretamente a pagina de portfolio para ver valores e briefing.
               </p>
 
               <div class="contact-links">
@@ -325,52 +298,38 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span>Link do portfolio</span>
+                  <span>Link do site</span>
                   <strong data-site-label>pedromatheus-dev.vercel.app</strong>
                 </a>
               </div>
             </div>
 
-            <form class="contact-card reveal" id="contact-form">
-              <div class="card-label">Briefing rapido</div>
-              <h3>Montar mensagem para o Gmail</h3>
-              <label>
-                Nome
-                <input type="text" name="name" placeholder="Seu nome" required />
-              </label>
-              <label>
-                Empresa ou projeto
-                <input type="text" name="company" placeholder="Nome da empresa, marca ou projeto" />
-              </label>
-              <label>
-                O que voce precisa
-                <textarea
-                  name="message"
-                  rows="5"
-                  placeholder="Descreva o tipo de site, interface ou sistema que voce quer criar"
-                  required
-                ></textarea>
-              </label>
+            <div class="contact-card contact-card--compact reveal">
+              <div class="card-label">Atalhos</div>
+              <h3>Ir direto para a conversa.</h3>
+              <p class="form-hint">
+                Se voce ja sabe o que precisa, vale abrir o portfolio para ver a base de valores ou
+                mandar uma mensagem agora mesmo.
+              </p>
 
               <div class="form-actions">
-                <button class="button button-primary button-full" type="submit">
-                  Abrir Gmail com mensagem pronta
-                </button>
                 <a
-                  class="button button-secondary button-full"
+                  class="button button-primary button-full"
                   data-whatsapp-link
                   href="#"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Ir para o WhatsApp
+                  Falar no WhatsApp
+                </a>
+                <a
+                  class="button button-secondary button-full"
+                  href="portfolio.html#orcamento"
+                >
+                  Ver tabela de precos
                 </a>
               </div>
-
-              <p class="form-hint" id="form-feedback">
-                O formulario abre o Gmail com assunto e mensagem preenchidos automaticamente.
-              </p>
-            </form>
+            </div>
           </div>
         </section>
       </main>
@@ -378,10 +337,12 @@
       <footer class="site-footer">
         <div class="container footer-row">
           <p>
-            <span data-name>Pedro Matheus</span> • <span data-role>Desenvolvedor Full Stack</span>
+            <span data-name>Pedro Matheus</span> |
+            <span data-role>Desenvolvedor Full Stack</span>
           </p>
           <p>
-            <a data-site-link href="https://pedromatheus-dev.vercel.app">pedromatheus-dev.vercel.app</a>
+            <a href="servicos.html">Servicos</a> |
+            <a href="portfolio.html">Portfolio</a>
           </p>
         </div>
       </footer>

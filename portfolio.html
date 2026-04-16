@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio, tabela de precos e funcionamento do orcamento com Pedro Matheus."
+    />
+    <meta name="theme-color" content="#050706" />
+    <meta property="og:title" content="Pedro Matheus | Portfolio" />
+    <meta
+      property="og:description"
+      content="Veja valores iniciais, estrutura de entrega e como funciona o orcamento."
+    />
+    <meta property="og:type" content="website" />
+    <title>Pedro Matheus | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="portfolio">
+    <div class="page-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <div class="ambient ambient-three"></div>
+
+      <header class="site-header">
+        <div class="container header-row">
+          <a class="brand" href="index.html" aria-label="Ir para a pagina inicial">
+            <span class="avatar-shell">
+              <img
+                class="brand-avatar"
+                data-profile-image
+                alt="Foto de perfil de Pedro Matheus"
+                hidden
+              />
+              <span class="avatar-fallback" data-avatar-fallback>PM</span>
+            </span>
+
+            <span class="brand-copy">
+              <strong data-name>Pedro Matheus</strong>
+              <small data-role>Desenvolvedor Full Stack</small>
+            </span>
+          </a>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-controls="header-panel"
+            aria-expanded="false"
+            aria-label="Abrir menu"
+          >
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="header-panel" id="header-panel">
+            <nav class="site-nav" aria-label="Principal">
+              <a href="index.html" data-nav-page="home">Inicio</a>
+              <a href="servicos.html" data-nav-page="servicos">Servicos</a>
+              <a href="portfolio.html" data-nav-page="portfolio">Portfolio</a>
+              <a href="#contato">Contato</a>
+            </nav>
+
+            <div class="header-tools">
+              <div class="theme-switch" role="group" aria-label="Escolha do tema">
+                <button class="theme-option" type="button" data-set-theme="dark">
+                  Escuro
+                </button>
+                <button class="theme-option" type="button" data-set-theme="light">
+                  Claro
+                </button>
+              </div>
+
+              <a class="header-cta" href="#orcamento">Ver orcamento</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section page-hero">
+          <div class="container page-grid reveal">
+            <div class="section-heading">
+              <p class="eyebrow">Portfolio</p>
+              <h1 class="page-title">
+                Valores iniciais, formato de entrega e como funciona o orcamento.
+              </h1>
+              <p class="page-text">
+                Esta pagina organiza a visao comercial do projeto: faixas de preco, tipo de
+                entrega e o passo a passo para o cliente entender como o trabalho e conduzido.
+              </p>
+            </div>
+
+            <div class="glass-card page-side-card">
+              <div class="card-label">Importante</div>
+              <p>
+                Os valores abaixo funcionam como base inicial. O orcamento final depende de
+                escopo, numero de telas, integracoes, prazo e nivel de personalizacao.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="orcamento">
+          <div class="container">
+            <div class="section-heading reveal">
+              <p class="eyebrow">Tabela de precos</p>
+              <h2>Faixas de partida para os principais tipos de projeto.</h2>
+            </div>
+
+            <div class="pricing-grid">
+              <article class="price-card reveal">
+                <div class="card-label">Landing page</div>
+                <h3>A partir de R$ 900</h3>
+                <p>
+                  Ideal para campanhas, paginas de captacao ou apresentacao de um unico servico.
+                </p>
+                <ul>
+                  <li>Uma pagina estrategica</li>
+                  <li>Layout responsivo</li>
+                  <li>CTA e contato integrados</li>
+                </ul>
+              </article>
+
+              <article class="price-card reveal">
+                <div class="card-label">Site institucional</div>
+                <h3>A partir de R$ 1.800</h3>
+                <p>
+                  Para marcas e profissionais que precisam apresentar melhor o negocio com mais
+                  estrutura.
+                </p>
+                <ul>
+                  <li>Paginas principais do site</li>
+                  <li>Visual personalizado</li>
+                  <li>Base pronta para crescer</li>
+                </ul>
+              </article>
+
+              <article class="price-card reveal">
+                <div class="card-label">Interface sob medida</div>
+                <h3>A partir de R$ 3.500</h3>
+                <p>
+                  Para dashboards, areas logadas e experiencias web com mais logica de negocio.
+                </p>
+                <ul>
+                  <li>Telas e fluxos personalizados</li>
+                  <li>Estrutura escalavel</li>
+                  <li>Regras e integracoes conforme escopo</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="table-wrap reveal">
+              <table class="price-table">
+                <thead>
+                  <tr>
+                    <th>Servico</th>
+                    <th>Faixa inicial</th>
+                    <th>Prazo medio</th>
+                    <th>Escopo base</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Landing page estrategica</td>
+                    <td>R$ 900+</td>
+                    <td>5 a 7 dias</td>
+                    <td>Uma pagina, responsivo, formulario e CTA</td>
+                  </tr>
+                  <tr>
+                    <td>Site institucional</td>
+                    <td>R$ 1.800+</td>
+                    <td>7 a 14 dias</td>
+                    <td>Paginas principais, visual sob medida e estrutura completa</td>
+                  </tr>
+                  <tr>
+                    <td>Interface ou sistema web</td>
+                    <td>R$ 3.500+</td>
+                    <td>Variavel</td>
+                    <td>Paineis, login, fluxos internos e regras de negocio</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-soft">
+          <div class="container">
+            <div class="section-heading reveal">
+              <p class="eyebrow">Como funciona o orcamento</p>
+              <h2>O cliente entende o processo logo no inicio, sem surpresas no caminho.</h2>
+            </div>
+
+            <div class="budget-grid">
+              <article class="process-step reveal">
+                <span>01</span>
+                <h3>Contato inicial</h3>
+                <p>Recebo a ideia, o objetivo do projeto e o contexto do negocio.</p>
+              </article>
+
+              <article class="process-step reveal">
+                <span>02</span>
+                <h3>Analise de escopo</h3>
+                <p>Entendo numero de paginas, funcionalidades, referencias e prazo desejado.</p>
+              </article>
+
+              <article class="process-step reveal">
+                <span>03</span>
+                <h3>Proposta</h3>
+                <p>Envio a faixa de valor, prazo estimado e formato de entrega mais indicado.</p>
+              </article>
+
+              <article class="process-step reveal">
+                <span>04</span>
+                <h3>Inicio do projeto</h3>
+                <p>Com o alinhamento aprovado, sigo para estrutura, design e desenvolvimento.</p>
+              </article>
+            </div>
+
+            <div class="budget-note reveal">
+              <h3>O que pode alterar o valor final</h3>
+              <p>
+                Quantidade de paginas, nivel de personalizacao visual, urgencia, integracoes com
+                ferramentas externas, logica de negocio e revisoes fora do escopo inicial.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="contato">
+          <div class="container contact-layout">
+            <div class="contact-copy reveal">
+              <p class="eyebrow">Contato</p>
+              <h2>Se quiser, ja podemos transformar isso em briefing.</h2>
+              <p>
+                O caminho mais rapido para iniciar o orcamento e me mandar um resumo do projeto
+                pelo Gmail ou pelo WhatsApp.
+              </p>
+
+              <div class="contact-links">
+                <a class="contact-link" data-gmail-link href="#" target="_blank" rel="noreferrer">
+                  <span>Gmail</span>
+                  <strong data-email>pedromatheus.developer@gmail.com</strong>
+                </a>
+
+                <a
+                  class="contact-link"
+                  data-whatsapp-link
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span>WhatsApp</span>
+                  <strong data-whatsapp-display>+55 (47) 9 9648-2391</strong>
+                </a>
+
+                <a class="contact-link" data-site-link href="#" target="_blank" rel="noreferrer">
+                  <span>Link do site</span>
+                  <strong data-site-label>pedromatheus-dev.vercel.app</strong>
+                </a>
+              </div>
+            </div>
+
+            <form class="contact-card reveal" id="contact-form">
+              <div class="card-label">Briefing rapido</div>
+              <h3>Enviar resumo do projeto</h3>
+              <label>
+                Nome
+                <input type="text" name="name" placeholder="Seu nome" required />
+              </label>
+              <label>
+                Empresa ou projeto
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Nome da empresa, marca ou projeto"
+                />
+              </label>
+              <label>
+                O que voce precisa
+                <textarea
+                  name="message"
+                  rows="5"
+                  placeholder="Descreva o tipo de site, pagina ou sistema que voce quer criar"
+                  required
+                ></textarea>
+              </label>
+
+              <div class="form-actions">
+                <button class="button button-primary button-full" type="submit">
+                  Abrir Gmail com mensagem pronta
+                </button>
+                <a
+                  class="button button-secondary button-full"
+                  data-whatsapp-link
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ir para o WhatsApp
+                </a>
+              </div>
+
+              <p class="form-hint" id="form-feedback">
+                O formulario abre o Gmail com assunto e mensagem preenchidos automaticamente.
+              </p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-row">
+          <p>
+            <span data-name>Pedro Matheus</span> |
+            <span data-role>Desenvolvedor Full Stack</span>
+          </p>
+          <p>
+            <a href="index.html">Inicio</a> |
+            <a href="servicos.html">Servicos</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

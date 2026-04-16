@@ -80,10 +80,19 @@ const root = document.documentElement;
 const themeMeta = document.querySelector('meta[name="theme-color"]');
 const headerPanel = document.getElementById("header-panel");
 const menuToggle = document.querySelector(".menu-toggle");
+const currentPage = document.body.dataset.page || "";
 const themeColors = {
   dark: "#050706",
   light: "#f8fff9",
 };
+
+document.querySelectorAll("[data-nav-page]").forEach((link) => {
+  const isCurrentPage = link.dataset.navPage === currentPage;
+  link.classList.toggle("is-current", isCurrentPage);
+  if (isCurrentPage) {
+    link.setAttribute("aria-current", "page");
+  }
+});
 
 const setTheme = (theme) => {
   const selectedTheme = theme === "light" ? "light" : "dark";
