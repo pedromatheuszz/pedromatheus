@@ -1,7 +1,7 @@
 const portfolioData = {
   name: "Pedro Matheus",
   role: "Desenvolvedor Full Stack",
-  availability: "Disponivel para novos projetos em 2026",
+  availability: "Disponível para novos projetos em 2026",
   email: "pedromatheus.developer@gmail.com",
   whatsappDisplay: "+55 (47) 9 9648-2391",
   whatsappNumber: "5547996482391",
@@ -51,7 +51,7 @@ document.querySelectorAll("[data-gmail-link]").forEach((link) => {
 });
 
 document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
-  link.href = buildWhatsAppUrl("Ola, Pedro. Vim pelo seu site e quero conversar sobre um projeto.");
+  link.href = buildWhatsAppUrl("Olá, Pedro. Vim pelo seu site e quero conversar sobre um projeto.");
 });
 
 document.querySelectorAll("[data-site-link]").forEach((link) => {
